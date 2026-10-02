@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>24 giờ ở Hà Nội</title>
+<style>
+:root{--bg:#eceee0;--card:#f8f9ef;--ink:#1d2a24;--mut:#5d6b62;--grn:#1f4d3f;--red:#b3261e;--yel:#f0cf6a;--ok:#1d7a4a;--ln:#cfd5bf;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14201b;--card:#1d2c25;--ink:#eef0e0;--mut:#a5b3a8;--grn:#7cc4a8;--red:#ee7b70;--yel:#c9a43a;--ok:#5fcf93;--ln:#34493f}}
+:root[data-theme=dark]{--bg:#14201b;--card:#1d2c25;--ink:#eef0e0;--mut:#a5b3a8;--grn:#7cc4a8;--red:#ee7b70;--yel:#c9a43a;--ok:#5fcf93;--ln:#34493f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:760px;margin:0 auto;padding:16px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2}
+h1{font-size:2.6rem;margin:.2em 0;color:var(--red)}h2{font-size:1.5rem;color:var(--grn)}h3{font-size:1.1rem;margin:1.2em 0 .4em}
+button,select,input,textarea{font:inherit;color:var(--ink)}
+button{background:var(--card);border:1px solid var(--grn);border-radius:6px;padding:6px 12px;cursor:pointer;margin:2px}
+button:hover{background:var(--yel);color:#1d2a24}button.pri{background:var(--grn);color:var(--bg);font-weight:600;padding:10px 20px}
+button:disabled{opacity:.6;cursor:default}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--red);outline-offset:1px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:8px 0;border-bottom:3px solid var(--grn);z-index:5}
+.top div{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.pb{height:6px;background:var(--ln);margin-top:6px}.pb i{display:block;height:100%;background:var(--red)}
+.ch,.q,.wd,.cc{background:var(--card);border-left:5px solid var(--yel);padding:10px 14px;margin:10px 0}
+.q{border-left-color:var(--grn)}.ts{color:var(--mut);font-size:.85rem}.vi{font-size:1.15rem;margin:.2em 0}.en{color:var(--mut);margin:.2em 0}
+.w{background:linear-gradient(transparent 60%,var(--yel) 60%);cursor:pointer}
+.tip{position:sticky;top:60px;background:var(--grn);color:var(--bg);padding:8px 12px;margin:8px 0;z-index:4}.tip button{color:#1d2a24;background:var(--yel)}
+.opts button{display:block;width:100%;text-align:left;margin:4px 0}.opts input,.opts textarea{width:100%;box-sizing:border-box;padding:8px;background:var(--bg);border:1px solid var(--grn);border-radius:6px}
+.fb{margin-top:6px;font-weight:600}.fb.ok{color:var(--ok)}.fb.bad{color:var(--red)}button.good{border-color:var(--ok);background:var(--ok);color:#fff}button.badb{border-color:var(--red);text-decoration:line-through}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}.wd{margin:0}.mut{color:var(--mut)}button.on{background:var(--yel);color:#1d2a24}
+.chip{display:inline-block;border:1px solid var(--grn);padding:2px 10px;margin:3px;border-radius:99px}.chip.on{background:var(--ok);color:#fff;border-color:var(--ok)}
+.sc{display:grid;grid-template-columns:130px 1fr 60px;gap:8px;align-items:center;margin:6px 0}.sc i{display:block;height:10px;background:var(--red)}.sc span{background:var(--ln);display:block}
+.foot{display:flex;justify-content:space-between;margin:20px 0}
+@media(max-width:520px){h1{font-size:2rem}}
+</style></head><body><main id="app"></main>
+<script>
+const $=s=>document.querySelector(s);
+const T=[
+["0:02","Hà Nội đây. Trong series 24 giờ ở Hà Nội này thì mời các bác theo chân tôi khám phá mảnh đất từ một người đã sinh ra và lớn lên ở đây nha.","This is Hanoi. In this series, come along as I explore the city as someone born and raised here."],
+["0:10","Sáng nay thì tôi có ghé phở Lâm Hàng Vải. Quán này chỉ một buổi sáng thôi và hết hàng cực nhanh.","This morning I dropped by Phở Lâm. It only opens in the morning and sells out very fast."],
+["0:13","Ở đây thì nhất định phải gọi phở Lâm, phải nói là số một trong lòng tôi luôn. Nước dùng thanh và nêm nếm rất vừa phải, chỉ 65k một bát nhưng no đến chiều.","You must order phở here – number one in my heart. Light broth, well seasoned, only 65k a bowl but it keeps you full until afternoon."],
+["0:20","Ăn sáng xong thì phải uống cà phê. Thế nên là tôi đã ghé qua cà phê Nhĩ. Đây là một trong tứ trụ cà phê tại Hà Nội vì quán vẫn giữ được hương vị xưa cũ từ chiếc ghế đến biển hiệu và đặc biệt là cà phê.","After breakfast, coffee. So I stopped by Cà phê Nhĩ, one of Hanoi's four coffee pillars: it keeps its old flavour, from the chairs to the sign, and above all the coffee."],
+["0:28","Bác nào mà không uống được quá nhiều cà phê như tôi thì có thể gọi một cốc nâu đá để nhâm nhi nha.","If you can't drink much coffee like me, order an iced nâu đá to sip slowly."],
+["0:35","Rồi đến Hà Nội nhất định phải thử kem Tràng Tiền. Giờ ở đây đã có thêm rất nhiều vị kem mới lạ và còn có cả cơ sở mới nữa.","Then, in Hanoi you must try Tràng Tiền ice cream. Now there are many new flavours and even a new branch."],
+["0:43","Cuối buổi thì tôi có ghé qua bưu điện Hà Nội. Đây vừa là chỗ nghỉ ngơi mà còn nhìn thẳng ra hồ Gươm luôn. Quanh khu vực này thì cũng bán rất nhiều đồ lưu niệm mang đậm dấu ấn Hà Nội như móc khóa, nam châm hay là thiệp này rất là xinh luôn.","At the end I dropped by the Hanoi post office: a place to rest that faces Hồ Gươm. Nearby they sell many Hanoi-flavoured souvenirs: keychains, magnets, very pretty cards."],
+["0:53","Nay du lịch Hà Nội nên là tôi đã quyết định di chuyển hoàn toàn bằng Green SM. Trước đây là Xanh SM, gọi xe rất nhanh chóng và dễ dàng.","Today I decided to get around entirely by Green SM (formerly Xanh SM). Booking is quick and easy."],
+["1:01","Tổng kết hôm nay đặt Green SM di chuyển tận ba điểm. Như thế là hết 107k nhưng áp mã được cả ba lần luôn.","Today I booked three trips: 107k in total, but I used a discount code on all three."],
+["1:06","Đi từ tận Cầu Giấy lên Hàng Vải hết 52k, giảm còn 43k. Rồi từ Hàng Vải lên kem Tràng Tiền từ 18k còn 15k. Xong từ Hồ Gươm về nhà tôi 59k cũng chỉ còn 49k.","Cầu Giấy to Hàng Vải: 52k, down to 43k. Hàng Vải to the ice cream: 18k to 15k. Hồ Gươm home: 59k down to 49k."],
+["1:17","Tổng tiết kiệm được tận 22k. Ngày nào cũng đều đều như thế này thì chắc một tháng cũng phải được gần 700k đấy nhỉ.","Total saved: 22k. Doing this every day, that's probably nearly 700k a month."],
+["1:20","À nếu mà bác nào cũng di chuyển nhiều như tôi thì trên Green SM còn có gói hội viên Green Buy chỉ từ 20k một tháng, có tận 60 mã giảm 20%. Sương sương là mỗi tháng sẽ tiết kiệm được gần hai củ so với book lẻ luôn.","If you travel a lot like me, there's a membership from 20k a month with 60 codes at 20% off. Roughly, you save nearly 2 million a month versus booking single rides."],
+["1:32","Nay tôi gọi Green SM thì thấy các bác tài hầu như đều đi xe mới, chạy êm và cũng rất nhiệt tình nữa. Đấy, thế nên là khám phá Hà Nội mà không rành đường thì các bác có thể tải app Green SM để tiện di chuyển.","The drivers mostly have new, smooth cars and are friendly. So if you don't know the roads, download the app."],
+["1:43","Nhắc nhỏ là các bác đăng ký tài khoản mới và nhập mã giới thiệu KOL Hà Nội là có thể nhận thêm ưu đãi lên tới 200k nha. Và giờ thì bye, hẹn các bác một ngày gần nhất lại cùng khám phá Hà Nội với tôi nhá.","Reminder: new accounts with the code get up to 200k extra. Bye – see you next time!"]];
+// term, English, example, category (f food, h Hanoi, t transport, m money, n natural), note
+const V=[
+["nước dùng","broth","Nước dùng ở đây rất thanh.","f"],["nêm nếm","to season food","Món này được nêm nếm vừa phải.","f"],["vừa phải","just right, moderate","Giá vừa phải, ai cũng ăn được.","f"],["nâu đá","iced milk coffee (Northern term)","Cho mình một cốc nâu đá.","f"],["hương vị","flavour","Quán vẫn giữ hương vị xưa cũ.","f"],
+["ghé","to drop by","Chiều nay tôi ghé quán cà phê.","h"],["khám phá","to explore","Cuối tuần tôi muốn khám phá phố cổ.","h"],["khu vực","area","Khu vực này có nhiều quán ăn.","h"],["đồ lưu niệm","souvenirs","Tôi mua đồ lưu niệm cho bạn.","h"],["móc khóa","keychain","Móc khóa này rất xinh.","h"],["nam châm","fridge magnet","Tôi sưu tầm nam châm.","h"],["thiệp","greeting card","Tôi mua một tấm thiệp.","h"],["bưu điện","post office","Bưu điện Hà Nội ở gần hồ Gươm.","h"],["tứ trụ","the 'four pillars' (top four famous names)","Đây là một trong tứ trụ cà phê Hà Nội.","h"],
+["di chuyển","to get around, travel","Tôi di chuyển bằng xe máy.","t"],["gọi xe","to book a ride","Gọi xe bằng app rất nhanh.","t"],["rành đường","to know the roads well","Tôi chưa rành đường ở đây.","t"],["chạy êm","to run smoothly","Xe mới nên chạy êm.","t"],["nhiệt tình","enthusiastic, helpful","Anh ấy rất nhiệt tình.","t"],
+["mã giảm","discount code","Nhập mã giảm để được rẻ hơn.","m"],["giảm","to reduce, discount","Giá giảm còn 43k.","m"],["tiết kiệm","to save (money)","Đi bằng app giúp tôi tiết kiệm tiền.","m"],["lên tới","up to","Ưu đãi lên tới 200k.","m"],["gần","nearly, almost","Gần 700k một tháng.","m"],
+["theo chân","to follow along with","Mời các bạn theo chân tôi.","n","“Các bác” is how the speaker casually addresses viewers. “Mời … theo chân tôi” = come along with me."],
+["nhất định phải","definitely must","Đến Hà Nội nhất định phải thử phở.","n","Strong recommendation, very common in reviews and travel tips."],
+["no đến chiều","full until the afternoon","Một bát phở, no đến chiều.","n","One meal keeps you full for a long time."],
+["nhâm nhi","to sip/nibble slowly and enjoy","Tôi thích nhâm nhi cà phê buổi sáng.","n","Slow, relaxed drinking or snacking."],
+["mang đậm dấu ấn","strongly bears the mark of","Khu phố này mang đậm dấu ấn Hà Nội.","n","Slightly formal; common in travel writing."],
+["đều đều","regularly, steadily","Ngày nào cũng đều đều như thế.","n","Repeating at a steady rhythm."],
+["sương sương","roughly, more or less (casual)","Sương sương là tiết kiệm gần 2 triệu.","n","Informal filler meaning “so, roughly…”."],
+["hai củ","2 million đồng (slang)","Gần hai củ là gần 2.000.000đ.","n","“củ” = 1,000,000đ in casual speech. Gần hai củ = nearly 2,000,000đ."],
+["bác tài","driver (friendly)","Bác tài rất nhiệt tình.","n","“bác” + job is a friendly, respectful way to address people."],
+["chỉ … thôi","only, just","Quán này chỉ bán buổi sáng thôi.","n","Chỉ + thôi frames the limit: chỉ 65k thôi."],
+["bát","bowl (Northern; the South says tô)","Một bát phở 65k.","f","Northern speakers say bát for bowl and cốc for glass/cup."],
+["cốc","cup, glass","Cho mình một cốc nâu đá.","f"],
+["thanh","light, clean (taste)","Nước dùng rất thanh.","f","Describes broth that is clear and not heavy or greasy."],
+["vị","flavour","Kem có nhiều vị mới.","f"],
+["mới lạ","new and unusual","Vị kem này rất mới lạ.","f"],
+["hết hàng","sold out","Quán hay hết hàng sớm.","f","Said when a shop has run out of food or stock."],
+["xưa cũ","old-fashioned, nostalgic","Quán có không khí xưa cũ.","f","Positive nuance: a charming old atmosphere."],
+["mảnh đất","land, place (here: the city)","Tôi yêu mảnh đất này.","h","A warm, slightly poetic way to say this place."],
+["sinh ra và lớn lên","born and raised","Tôi sinh ra và lớn lên ở Hà Nội.","h","Common in self-introductions."],
+["biển hiệu","shop sign","Biển hiệu quán đã rất cũ.","h"],
+["cơ sở","branch, location","Quán có thêm một cơ sở mới.","h"],
+["nghỉ ngơi","to rest","Tôi ngồi nghỉ ngơi một chút.","h"],
+["nhìn thẳng ra","to face directly onto","Quán nhìn thẳng ra hồ.","h"],
+["du lịch","to travel, tourism","Nay tôi đi du lịch Hà Nội.","h"],
+["xinh","pretty, cute","Cái thiệp này rất xinh.","h","Used for small cute things and for girls."],
+["hoàn toàn","completely","Tôi hoàn toàn đi bằng xe công nghệ.","t"],
+["nhanh chóng","quickly","Gọi xe rất nhanh chóng.","t"],
+["tải app","to download the app","Bạn tải app về điện thoại nhé.","t"],
+["xe mới","new car","Bác tài đi xe mới.","t"],
+["hầu như","almost all, mostly","Hầu như xe nào cũng mới.","t"],
+["tổng kết","to sum up","Tổng kết hôm nay tôi tiêu 107k.","m"],
+["áp mã","to apply a code","Nhớ áp mã trước khi đặt xe.","m","Short for áp dụng mã giảm giá."],
+["gói hội viên","membership package","Gói hội viên chỉ 20k một tháng.","m"],
+["book lẻ","booking single rides (pay per trip)","Book lẻ thì không có ưu đãi.","m","lẻ = single, separate: the opposite of a package."],
+["mã giới thiệu","referral code","Nhập mã giới thiệu để nhận quà.","m"],
+["ưu đãi","special offer, perk","Có nhiều ưu đãi cho người mới.","m"],
+["đăng ký tài khoản","to register an account","Bạn đăng ký tài khoản mới nhé.","m"],
+["tận","as much as, all the way (emphasis)","Tiết kiệm được tận 22k.","g","Adds emphasis to an amount or distance: as much as / all the way."],
+["thế nên là","so, that is why","Thế nên là tôi chọn đi xe.","g","Spoken connector for giving the reason."],
+["đấy","you see, there you go","Đấy, thế nên tôi thích Hà Nội.","g","Points at the reason or result."],
+["nhắc nhỏ","a small reminder","Nhắc nhỏ là quán đóng cửa lúc 12h.","g"],
+["hẹn","to promise to meet again","Hẹn gặp lại các bạn.","g"],
+["luôn","really, right away (casual emphasis)","Ngon luôn!","g","Sentence-final luôn adds emphasis, or means and also / right away."],
+["nha / nhá / nhỉ","friendly sentence-final particles","Đi nha! Ngon nhỉ?","n","nha/nhá soften advice and invite agreement; nhỉ asks for agreement, like right?"],
+["số một trong lòng","number one in my heart","Phở này số một trong lòng tôi.","n","A personal way to say my absolute favourite."]];
+const NOTES={"nêm nếm":"Doubled verb: season and taste to balance salt, sweet and sour.","nâu đá":"Hanoi term; the South says cà phê sữa đá.","ghé":"Casual drop by: ghé qua, ghé vào.","khám phá":"Explore; common in travel video titles.","di chuyển":"Move from place to place; sounds formal but is very common with transport.","gọi xe":"Literally call a car: booking a ride in an app.","rành đường":"rành = skilled, familiar with; also rành tiếng Việt.","giảm":"giảm giá = discount; giảm còn 43k = reduced to 43k.","tiết kiệm":"Also an adjective: người tiết kiệm = a thrifty person.","gần":"gần + number = nearly: gần 700k.","lên tới":"Sets an upper limit: up to 200k.","đồ lưu niệm":"đồ = things; lưu niệm = to keep as a memento.","nhiệt tình":"Positive trait for service staff: warm and willing to help.","chạy êm":"êm = smooth and quiet; also êm tai (pleasant to hear).","nước dùng":"The broth of phở or noodle soups."};V.forEach(v=>{if(!v[4]&&NOTES[v[0]])v[4]=NOTES[v[0]]});
+const TERMS=V.map(v=>v[0]).filter(t=>!t.includes("…")).sort((a,b)=>b.length-a.length);
+const RX=new RegExp("(?<![\\p{L}])("+TERMS.join("|")+")(?![\\p{L}])","giu");
+const wrap=s=>s.replace(RX,m=>`<span class="w" data-a="w" data-k="${V.findIndex(v=>v[0].toLowerCase()==m.toLowerCase())}">${m}</span>`);
+const expl=s=>{const u=new Set;s.replace(RX,m=>{u.add(V.findIndex(v=>v[0].toLowerCase()==m.toLowerCase()))});return u.size?`<details><summary>Giải nghĩa (${u.size})</summary>${[...u].map(k=>`<p class="en"><b>${V[k][0]}</b>: ${V[k][1]}${V[k][4]?" – "+V[k][4]:""}</p>`).join("")}</details>`:""};
+const TF=["ĐÚNG","SAI"];
+const L1=[["Buổi sáng, người nói đi ăn gì?",["Bún chả","Phở","Bánh mì","Xôi"],1],["Quán phở chỉ bán vào lúc nào?",["Buổi sáng","Buổi trưa","Buổi tối","Cả ngày"],0],["Một bát phở giá bao nhiêu?",["45k","55k","65k","75k"],2],["Người nói nhận xét nước dùng như thế nào?",["Rất cay","Rất ngọt","Thanh và nêm nếm vừa phải","Rất mặn"],2],["Sau khi ăn sáng, người nói đi đâu?",["Đi mua sắm","Đi uống cà phê","Đi xem phim","Đi về nhà"],1],["Người nói gợi ý gọi loại cà phê nào?",["Bạc xỉu","Cà phê đen nóng","Nâu đá","Cà phê trứng"],2],["Vì sao người nói gợi ý nâu đá?",["Vì thích cà phê nóng","Vì không uống được quá nhiều cà phê","Vì nâu đá rẻ hơn","Vì quán chỉ có nâu đá"],1],["Sau khi uống cà phê, người nói đi đâu?",["Hồ Tây","Chợ Đồng Xuân","Kem Tràng Tiền","Văn Miếu"],2],["Ở khu vực Hồ Gươm, người nói có thể mua gì?",["Đồ điện tử","Đồ lưu niệm","Quần áo thể thao","Thực phẩm"],1],["Người nói dùng phương tiện gì để di chuyển?",["Xe buýt","Taxi truyền thống","Green SM","Tàu điện"],2]];
+const L2=[["Quán phở chỉ bán vào buổi sáng.",TF,0,"Đúng: “chỉ một buổi sáng thôi”."],["Một bát phở có giá 100k.",TF,1,"Giá là 65k một bát."],["Người nói không uống được quá nhiều cà phê.",TF,0],["Người nói tiết kiệm được 22k.",TF,0,"43+15+49 = 107k, giảm từ 129k: tiết kiệm 22k."],["Đi từ Cầu Giấy lên Hàng Vải sau khi giảm giá hết 52k.",TF,1,"Giá ban đầu là 52k, sau khi giảm còn 43k."]];
+const L3=[["Vì sao quán cà phê vẫn giữ được “hương vị xưa cũ”?",["Vì quán mới mở","Vì quán giữ nhiều nét cũ từ chiếc ghế, biển hiệu đến cà phê","Vì quán rất lớn","Vì quán nằm ngoài Hà Nội"],1],["Cụm “no đến chiều” có nghĩa là gì?",["Ăn rất chậm","Ăn xong vẫn đói","Ăn một lần nhưng no trong thời gian dài","Ăn vào buổi chiều"],2],["Vì sao người nói chọn di chuyển bằng Green SM?",["Vì muốn thử phương tiện mới","Vì gọi xe nhanh và dễ dàng","Vì không biết đi xe máy","Vì không có phương tiện khác"],1]];
+const mk=a=>a.map(([q,o,a,e])=>({q,o,a,e}));
+const has=(t,r)=>r.test(t);
+const SK=[{q:"Nếu bạn có 24 giờ ở Hà Nội, bạn sẽ đi đâu? (nêu ít nhất 3 nơi)",ok:t=>(t.match(/,|;| và /g)||[]).length>=2,h:"Name at least 3 places, separated by commas or “và”."},{q:"Bạn sẽ ăn gì? (Tôi sẽ …)",ok:t=>/tôi sẽ\s+\S+/i.test(t),h:"Start with “Tôi sẽ …”."},{q:"Bạn sẽ uống gì? (Tôi sẽ …)",ok:t=>/tôi sẽ\s+\S+/i.test(t)&&/uống/i.test(t),h:"Use “Tôi sẽ uống …”."},{q:"Bạn sẽ di chuyển bằng gì? (Tôi sẽ đi bằng …)",ok:t=>/đi bằng\s+\S+/i.test(t),h:"Use “Tôi sẽ đi bằng …”."},{q:"Lịch trình: Buổi sáng, tôi sẽ… Sau đó… Buổi trưa… Buổi chiều… Buổi tối…",ok:t=>/buổi sáng/i.test(t)&&/buổi tối/i.test(t)&&/tôi sẽ/i.test(t),h:"Include at least “Buổi sáng, tôi sẽ …” and “Buổi tối, tôi sẽ …”."}];
+const EX=[["nhất định phải",/nhất định phải/i],["ghé",/(^|[^\p{L}])ghé/iu],["khám phá",/khám phá/i],["nhâm nhi",/nhâm nhi/i],["đồ lưu niệm",/đồ lưu niệm/i],["di chuyển",/di chuyển/i],["tiết kiệm",/tiết kiệm/i],["gần",/(^|[^\p{L}])gần/iu],["chỉ … thôi",/chỉ.+thôi/i],["từ … đến",/từ.+đến/i]];
+const pick=(a,k)=>[...a].sort(()=>Math.random()-.5).slice(0,k);
+function autoQ(cats,k,form){return pick(V.filter(v=>cats.includes(v[3])),k).map(v=>{const o=pick([...V.filter(w=>w[1]!=v[1])],2).map(w=>w[1]).concat(v[1]).sort(()=>Math.random()-.5);return{q:form(v[0]),o,a:o.indexOf(v[1]),e:v[2]}})}
+let S={i:-1,en:1,sc:{},dif:{},fin:"",ex:0},R={},n=0;
+try{Object.assign(S,JSON.parse(localStorage.getItem("h24")||"{}"),{i:-1})}catch(e){}
+const save=()=>{try{localStorage.setItem("h24",JSON.stringify({sc:S.sc,dif:S.dif,fin:S.fin,ex:S.ex}))}catch(e){}};
+const sayBtn=(t,l="▶ Nghe")=>``;
+function Q(it,cat){const id="q"+(++n);R[id]={...it,cat,done:0};
+const body=it.free?`<textarea rows="3" placeholder="Gõ câu trả lời… (say it aloud first!)"></textarea><button data-a="chk" data-id="${id}">Check</button>`:it.ans?`<input placeholder="Gõ từ còn thiếu" autocomplete="off"><button data-a="chk" data-id="${id}">Check</button>`:it.o.map((o,i)=>`<button data-a="pick" data-id="${id}" data-i="${i}">${o}</button>`).join("");
+return `<div class="q" id="${id}"><p><b>${it.q}</b></p>${it.say?`<p>${sayBtn(it.say)}</p>`:""}<div class="opts">${body}</div><div class="fb"></div></div>`}
+function grade(id,ok,exp){const r=R[id],el=$("#"+id),fb=el.querySelector(".fb");
+if(!r.done){(S.sc[r.cat]??={})[id]=ok?1:0;r.done=1;save()}
+fb.className="fb "+(ok?"ok":"bad");fb.innerHTML=(ok?"✔ CORRECT":"✘ TRY AGAIN")+(exp?" — "+exp:"")+(ok&&r.show?`<br><span class="mut">Transcript: ${r.show}</span>`:"")+(ok&&r.ex?`<br><span class="mut">Model: ${r.ex}</span>`:"");
+if(ok)el.querySelectorAll("button,input,textarea").forEach(b=>b.disabled=true)}
+const norm=s=>s.toLowerCase().replace(/[.!?,]/g,"").trim();
+const qs=(a,c)=>a.map(x=>Q(x,c)).join("");
+const wcard=v=>`<div class="wd"><b>${v[0]}</b><br>${v[1]}<br><i class="mut">${v[2]}</i>${v[4]?`<br><span class="mut">${v[4]}</span>`:""}</div>`;
+const cat=(c,t)=>`<h3>${t}</h3><div class="grid">${V.filter(v=>v[3]==c).map(wcard).join("")}</div>`;
+const SEC=[
+["WATCH & READ",()=>`<h2>Watch & Read</h2><p class="mut">Click highlighted words for meaning and an example. Open the original video in another tab, listen first, then read along. Open “Giải nghĩa” under each chunk for every key word explained.</p><div><button data-a="en">${S.en?"Hide":"Show"} English</button></div><div class="tip" id="tip">Click a highlighted word…</div>`+T.map((t,i)=>`<div class="ch"><span class="ts">${t[0]}</span><p class="vi">${wrap(t[1])}</p>${S.en?`<p class="en">${t[2]}</p>`:""}<button data-a="dif" data-i="${i}" class="${S.dif[i]?"on":""}">${S.dif[i]?"★ Difficult":"☆ Mark as difficult"}</button>${expl(t[1])}</div>`).join("")],
+["COMPREHENSION CHECK",()=>`<h2>Comprehension Check</h2><p class="mut">Answer in Vietnamese context. Wrong? Try again.</p><h3>Level 1 – Nhớ thông tin</h3>${qs(mk(L1),"comp")}<h3>Level 2 – Đúng hay sai?</h3>${qs(mk(L2),"comp")}<h3>Level 3 – Hiểu ý</h3>${qs(mk(L3),"comp")}<h3>Level 4 – Cả câu chuyện (tự kiểm tra)</h3>`+[["Buổi sáng người nói đã làm những gì?","Người nói đi ăn phở và uống cà phê."],["Người nói đã đến những địa điểm nào?","Hàng Vải (phở Lâm), quán cà phê, kem Tràng Tiền, bưu điện / hồ Gươm."],["Video này chủ yếu nói về điều gì?","Một ngày khám phá Hà Nội: ăn uống, tham quan và di chuyển bằng Green SM."]].map(x=>`<div class="q"><b>${x[0]}</b><details><summary>Show model answer</summary>${x[1]}</details></div>`).join("")],
+["KEY VOCABULARY",()=>`<h2>Key Vocabulary</h2>${cat("f","Food & drink")}${cat("h","Hanoi & tourism")}${cat("t","Transport")}${cat("m","Money & promotions")}${cat("g","Speech & connectors")}<h3>Quick check</h3>${qs(autoQ("fhtmg",5,w=>`“${w}” nghĩa là gì?`),"voc")}`],
+["NATURAL VIETNAMESE",()=>`<h2>Natural Vietnamese</h2>`+V.filter(v=>v[3]=="n").map(v=>`<div class="wd" style="margin:8px 0"><b>${v[0]}</b> → ${v[1]}<br><i>${v[2]}</i><br><span class="mut">${v[4]}</span></div>`).join("")+`<h3>Quick check</h3>${qs(autoQ("n",5,w=>`Ý nghĩa của “${w}” là gì?`),"nat")}`],
+["SPEAKING PRACTICE",()=>`<h2>Speaking Practice</h2><p class="mut">Say your answer aloud first, then type it to check the pattern.</p>${qs(SK.map(s=>({...s,free:1})),"spk")}`],
+["FINAL CHALLENGE",()=>`<h2>Thiết kế 24 giờ ở Hà Nội của bạn</h2><p>Choose 3–5 places, at least 2 foods/drinks, how you travel, and use at least 5 expressions.</p><textarea id="fc" rows="8" style="width:100%;box-sizing:border-box;padding:8px;background:var(--card);border:1px solid var(--grn)">${S.fin}</textarea><p id="fcs"></p>`],
+["REVIEW",()=>review()]];
+const cnt=c=>Object.values(S.sc[c]||{}).reduce((a,b)=>a+b,0),did=c=>Object.keys(S.sc[c]||{}).length;
+function scores(){return[["Comprehension",did("comp")?Math.round(cnt("comp")/18*10):null,"Story details – re-read Watch & Read and replay the clips."],["Vocabulary",did("voc")?cnt("voc")*2:null,"Money expressions and transport vocabulary (Sections 3 and 6)."],["Natural Vietnamese",did("nat")?cnt("nat")*2:null,"Expressions like “sương sương”, “gần hai củ”, “no đến chiều” (Section 4)."],["Speaking",did("spk")||S.ex?cnt("spk")+Math.min(5,S.ex):null,"Use patterns from Section 8 in your own sentences."]]}
+function review(){const sc=scores(),low=sc.filter(s=>s[1]==null||s[1]<7),dif=Object.keys(S.dif).filter(k=>S.dif[k]);
+return `<h2>Review & Progress</h2>`+sc.map(s=>`<div class="sc"><span>${s[0]}</span><span><i style="width:${(s[1]||0)*10}%"></i></span><b>${s[1]==null?"–":s[1]+"/10"}</b></div>`).join("")+`<h3>Your review areas</h3>`+(low.length?"<ul>"+low.map(s=>`<li>${s[1]==null?`<b>${s[0]}</b>: not tried yet.`:`<b>${s[0]}</b>: ${s[2]}`}</li>`).join("")+"</ul>":"<p>Strong across the board. Try the Final Challenge again with new places.</p>")+(dif.length?`<h3>Chunks you marked difficult</h3>`+dif.map(k=>`<div class="ch"><span class="ts">${T[k][0]}</span> ${T[k][1]}</div>`).join(""):"")+`<h3>What you learned</h3><p>Hanoi food · Hanoi coffee culture · landmarks · transport · money expressions · natural spoken Vietnamese · sentence patterns</p><button data-a="reset">Reset progress</button>`}
+function render(){R={};const a=$("#app");
+if(S.i<0){a.innerHTML=`<h1>24 GIỜ Ở HÀ NỘI</h1><p class="mut">What would you do if you had 24 hours in Hanoi?</p><h2>Học tiếng Việt qua một video đời thường về Hà Nội</h2><p>Bạn sẽ cùng người nói khám phá Hà Nội trong 24 giờ, từ ăn phở, uống cà phê đến đi Hồ Gươm và sử dụng dịch vụ gọi xe.</p><p class="mut">Level A2–B1 · 7 sections: see it, hear it, understand it, practise it, use it.</p><button class="pri" data-a="go" data-i="0">START LESSON</button> <button class="pri" data-a="go" data-i="6">VIEW PROGRESS</button>`;return}
+const i=S.i;a.innerHTML=`<div class="top"><div><b>Section ${i+1} / 7</b><select aria-label="Jump to section">${SEC.map((s,j)=>`<option value="${j}" ${j==i?"selected":""}>${j+1}. ${s[0]}</option>`).join("")}</select><button data-a="go" data-i="-1">Home</button></div><div class="pb"><i style="width:${(i+1)/7*100}%"></i></div></div>${SEC[i][1]()}<div class="foot"><button data-a="go" data-i="${i-1}" ${i?"":"disabled"}>← Back</button><button class="pri" data-a="go" data-i="${i+1}" ${i<6?"":"disabled"}>Next →</button></div>`;
+if(i==5)fcUpd();window.scrollTo(0,0)}
+function fcUpd(){const t=$("#fc").value,u=EX.filter(e=>e[1].test(t));S.ex=u.length;S.fin=t;save();$("#fcs").innerHTML=`<b>${u.length}/10 expressions used</b> ${u.length>=5?"✔ requirement met":"(need 5)"}<br>`+EX.map(e=>`<span class="chip ${u.includes(e)?"on":""}">${e[0]}</span>`).join("")}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,d=b.dataset;
+if(a=="go"){S.i=+d.i;render()}
+else if(a=="en"){S.en=!S.en;const y=scrollY;render();scrollTo(0,y)}
+else if(a=="dif"){S.dif[d.i]=!S.dif[d.i];save();const y=scrollY;render();scrollTo(0,y)}
+else if(a=="w"){const v=V[d.k];$("#tip").innerHTML=`<b>${v[0]}</b> → ${v[1]}<br><i>${v[2]}</i>${v[4]?`<br>${v[4]}`:""}`}
+else if(a=="pick"){const r=R[d.id],ok=+d.i==r.a;b.classList.add(ok?"good":"badb");grade(d.id,ok,r.e)}
+else if(a=="chk"){const r=R[d.id],v=$("#"+d.id).querySelector("input,textarea").value.trim();if(!v)return;const ok=r.ans?r.ans.some(x=>norm(x)==norm(v)):r.ok(v);grade(d.id,ok,ok?"":(r.h||r.e))}
+else if(a=="reset"){S={i:6,en:1,sc:{},dif:{},fin:"",ex:0};save();render()}});
+document.addEventListener("change",e=>{if(e.target.matches(".top select")){S.i=+e.target.value;render()}});
+document.addEventListener("input",e=>{if(e.target.id=="fc")fcUpd()});
+render();
+</script></body></html>
